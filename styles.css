@@ -3,29 +3,31 @@
     padding: 0;
     box-sizing: border-box;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-  }
+}
   
-  body {
+body {
     background-color: #f8f9fa;
     color: #212529;
     line-height: 1.5;
     padding: 20px;
-  }
+}
   
-  .container {
+.container {
     max-width: 650px;
     margin: 0 auto;
-  }
+    width: 100%;
+    padding: 0 15px;
+}
   
-  h1 {
+h1 {
     font-size: 1.8rem;
     font-weight: 500;
     margin-bottom: 30px;
     color: #333;
     text-align: center;
-  }
+}
   
-  .counter-card {
+.counter-card {
     background: #fff;
     border-radius: 6px;
     box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 4px;
@@ -34,54 +36,55 @@
     align-items: flex-start;
     margin-bottom: 12px;
     transition: box-shadow 0.2s ease;
-  }
+    flex-wrap: wrap;
+}
   
-  .counter-card:hover {
+.counter-card:hover {
     box-shadow: rgba(0, 0, 0, 0.12) 0px 4px 8px;
-  }
+}
   
-  .counter-icon {
+.counter-icon {
     margin-right: 15px;
     color: #495057;
     flex-shrink: 0;
     padding-top: 6px;
-  }
+}
   
-  .counter-icon svg {
+.counter-icon svg {
     width: 28px;
     height: 28px;
-  }
+}
   
-  .counter-info {
+.counter-info {
     flex: 1;
     min-width: 0;
-  }
+}
   
-  h2 {
+h2 {
     font-size: 0.95rem;
     font-weight: 500;
     margin-bottom: 5px;
     color: #343a40;
-  }
+}
   
-  .counter-value {
+.counter-value {
     font-size: 1.6rem;
     font-weight: 600;
     color: #0d6efd;
     letter-spacing: -0.02em;
-  }
+}
   
-  .counter-updated {
+.counter-updated {
     font-size: 0.75rem;
     color: #6c757d;
     margin: 4px 0 6px;
-  }
+}
   
-  .counter-source {
+.counter-source {
     position: relative;
-  }
+}
   
-  .source-button {
+.source-button {
     background: none;
     border: 1px solid #dee2e6;
     border-radius: 4px;
@@ -89,18 +92,18 @@
     color: #6c757d;
     cursor: pointer;
     padding: 3px 6px;
-  }
+}
   
-  .source-button:hover {
+.source-button:hover {
     background-color: #f1f3f5;
-  }
+}
   
-  .arrow {
+.arrow {
     font-size: 9px;
     margin-left: 3px;
-  }
+}
   
-  .source-content {
+.source-content {
     display: none;
     position: absolute;
     top: 100%;
@@ -115,46 +118,116 @@
     width: 280px;
     z-index: 10;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 6px;
-  }
+}
   
-  .source-content p {
+.source-content p {
     margin-bottom: 5px;
-  }
+}
   
-  .source-content a {
+.source-content a {
     color: #0d6efd;
     text-decoration: none;
-  }
+}
   
-  .source-content a:hover {
+.source-content a:hover {
     text-decoration: underline;
-  }
+}
   
-  .source-content code {
+.source-content code {
     background: #e9ecef;
     padding: 2px 4px;
     border-radius: 3px;
     font-size: 0.75rem;
     color: #212529;
-  }
+}
   
-  .show-source .source-content {
+.show-source .source-content {
     display: block;
-  }
+}
   
-  #statusMessage {
+#statusMessage {
     color: #dc3545;
     font-size: 0.8rem;
     margin-top: 8px;
     text-align: center;
-  }
+}
   
-  @keyframes pulse {
+@keyframes pulse {
     0% { transform: scale(1); }
     50% { transform: scale(1.02); }
     100% { transform: scale(1); }
-  }
+}
   
-  .pulse {
+.pulse {
     animation: pulse 0.5s;
-  }
+}
+
+/* Responsive Styles */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 10px;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+    
+    .counter-card {
+        padding: 10px;
+    }
+    
+    .counter-info {
+        width: 100%;
+    }
+    
+    .counter-icon {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    
+    .counter-value {
+        font-size: 1.4rem;
+    }
+    
+    .source-content {
+        width: 100%;
+        max-width: 260px;
+        left: auto;
+        right: 0;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    h1 {
+        font-size: 1.6rem;
+    }
+    
+    .counter-value {
+        font-size: 1.5rem;
+    }
+    
+    .source-content {
+        width: 250px;
+    }
+}
+
+@media (max-width: 320px) {
+    .counter-card {
+        padding: 8px;
+    }
+    
+    h2 {
+        font-size: 0.9rem;
+    }
+    
+    .counter-value {
+        font-size: 1.3rem;
+    }
+    
+    .source-content {
+        max-width: 220px;
+    }
+}
