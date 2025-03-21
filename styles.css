@@ -82,6 +82,7 @@ h2 {
   
 .counter-source {
     position: relative;
+    width: 100%;
 }
   
 .source-button {
@@ -139,6 +140,7 @@ h2 {
     border-radius: 3px;
     font-size: 0.75rem;
     color: #212529;
+    word-break: break-all;
 }
   
 .show-source .source-content {
@@ -163,7 +165,7 @@ h2 {
 }
 
 /* Responsive Styles */
-@media (max-width: 480px) {
+@media (max-width: 580px) {
     .container {
         padding: 0 10px;
     }
@@ -174,60 +176,102 @@ h2 {
     }
     
     .counter-card {
-        padding: 10px;
-    }
-    
-    .counter-info {
-        width: 100%;
+        padding: 16px 12px;
+        flex-direction: column;
     }
     
     .counter-icon {
         width: 100%;
         margin-right: 0;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    
+    .counter-icon svg {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .counter-info {
+        width: 100%;
         text-align: center;
     }
     
     .counter-value {
-        font-size: 1.4rem;
+        font-size: 1.8rem;
+        margin: 8px 0;
+    }
+    
+    .counter-updated {
+        margin: 8px 0 12px;
+    }
+    
+    .counter-source {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
     }
     
     .source-content {
-        width: 100%;
-        max-width: 260px;
-        left: auto;
-        right: 0;
+        width: 90vw;
+        max-width: 320px;
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 20px;
+        top: auto;
     }
 }
 
-@media (min-width: 481px) and (max-width: 768px) {
+@media (max-width: 400px) {
+    body {
+        padding: 10px;
+    }
+    
     h1 {
-        font-size: 1.6rem;
-    }
-    
-    .counter-value {
-        font-size: 1.5rem;
-    }
-    
-    .source-content {
-        width: 250px;
-    }
-}
-
-@media (max-width: 320px) {
-    .counter-card {
-        padding: 8px;
+        font-size: 1.3rem;
     }
     
     h2 {
         font-size: 0.9rem;
     }
     
-    .counter-value {
-        font-size: 1.3rem;
+    .counter-card {
+        padding: 12px 8px;
+        margin-bottom: 10px;
     }
     
-    .source-content {
-        max-width: 220px;
+    .counter-value {
+        font-size: 1.5rem;
+    }
+    
+    .counter-updated, .source-button {
+        font-size: 0.7rem;
+    }
+    
+    #statusMessage {
+        font-size: 0.7rem;
+    }
+}
+
+/* Fix for landscape orientation on mobile */
+@media (max-height: 480px) and (orientation: landscape) {
+    .container {
+        max-width: 90%;
+    }
+    
+    .counter-card {
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .counter-icon {
+        width: auto;
+        margin-right: 15px;
+        margin-bottom: 0;
+    }
+    
+    .counter-info {
+        text-align: left;
     }
 }
