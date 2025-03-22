@@ -78,6 +78,10 @@ h2 {
 .counter-card:nth-child(3) .counter-value {
     color: #f7931a; /* Bitcoin orange */
 }
+
+.counter-card:nth-child(4) .counter-value {
+    color: #dc3545; /* Earthquake red */
+}
   
 .counter-updated {
     font-size: 0.75rem;
