@@ -37,6 +37,7 @@ h1 {
     margin-bottom: 12px;
     transition: box-shadow 0.2s ease;
     flex-wrap: wrap;
+    cursor: pointer;
 }
   
 .counter-card:hover {
@@ -72,6 +73,10 @@ h2 {
     font-weight: 600;
     color: #0d6efd;
     letter-spacing: -0.02em;
+}
+
+.counter-card:nth-child(3) .counter-value {
+    color: #f7931a; /* Bitcoin orange */
 }
   
 .counter-updated {

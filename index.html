@@ -28,6 +28,25 @@
                 </div>
             </div>
         </div>
+
+        <div class="counter-card">
+            <div class="counter-icon">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="28" height="28"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M9.5 6.5V17.5M9.5 6.5L4.5 9M9.5 6.5L14.5 9M9.5 17.5L4.5 15M9.5 17.5L14.5 15M14.5 9L19.5 6.5M14.5 9V15M14.5 15L19.5 17.5" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g></svg>
+            </div>
+            <div class="counter-info">
+                <h2>Total Bitcoins Mined</h2>
+                <div class="counter-value" id="bitcoinCounter">Loading...</div>
+                <div class="counter-updated">Last updated: <span id="bitcoinLastUpdated">-</span></div>
+                <div class="counter-source">
+                    <button class="source-button">Data Source <span class="arrow">▼</span></button>
+                    <div class="source-content">
+                        <p>Data provided by <a href="https://www.blockchain.com/" target="_blank">Blockchain.com</a></p>
+                        <p>API Endpoint: <code>https://api.blockchain.info/stats</code></p>
+                        <p>Updates every 60 seconds</p>
+                    </div>
+                </div>
+            </div>
+        </div>
         
         <div id="statusMessage"></div>
     </div>
