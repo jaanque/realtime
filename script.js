@@ -119,7 +119,8 @@ async function fetchBitcoinData() {
     }
 }
 
-// Function to fetch Earthquake data from the API
+
+// Function to fetch earthquake data from the API
 async function fetchEarthquakeData() {
     try {
         statusMessage.textContent = 'Updating earthquake data...';
@@ -131,8 +132,8 @@ async function fetchEarthquakeData() {
         const day = String(today.getDate()).padStart(2, '0');
         const todayFormatted = `${year}-${month}-${day}`;
         
-        // Build the API URL with today's date
-        const apiUrl = `${EARTHQUAKE_API_URL}${todayFormatted}&minmagnitude=2.5`;
+        // Build the API URL with today's date and updated minimum magnitude
+        const apiUrl = `${EARTHQUAKE_API_URL}${todayFormatted}&minmagnitude=0.5`;
         
         const response = await fetch(apiUrl);
         
@@ -163,6 +164,7 @@ async function fetchEarthquakeData() {
         statusMessage.textContent = `Error: ${error.message}. Retrying in ${EARTHQUAKE_REFRESH_INTERVAL/1000} seconds.`;
     }
 }
+
 
 // Initial fetch
 fetchAircraftData();
